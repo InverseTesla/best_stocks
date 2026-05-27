@@ -12,6 +12,8 @@ def extract_data():
             "roe":{"Item1":15,"Item2":30},
             "liquidezmediadiaria":{"Item1":100000,"Item2":null},
             "dividaliquidapatrimonioliquido":{"Item1":null,"Item2":0.9},
+            "receitas_cagr5":{"Item1":10,"Item2":null},
+            "lucros_cagr5":{"Item1":10,"Item2":null},
         }""",
         "CategoryType": 1
     }

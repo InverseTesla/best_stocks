@@ -25,8 +25,6 @@ def transform_data(data):
             'PATRIMONIO / ATIVOS',
             'PASSIVOS / ATIVOS',
             'GIRO ATIVOS',
-            'CAGR RECEITAS 5 ANOS',
-            'CAGR LUCROS 5 ANOS',
             ' VPA',
             ' LPA',
             ' PEG Ratio'
@@ -37,4 +35,4 @@ def transform_data(data):
     non_duplicates_mask = ~ticker_name.duplicated(keep='first')
     df_cleaned = df[non_duplicates_mask]
 
-    print(df_cleaned)
+    return df_cleaned
