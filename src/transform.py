@@ -34,5 +34,8 @@ def transform_data(data):
     ticker_name = df['TICKER'].str[:4]
     non_duplicates_mask = ~ticker_name.duplicated(keep='first')
     df_cleaned = df[non_duplicates_mask]
+    df_cleaned = df_cleaned.dropna(axis=0)
 
-    return df_cleaned
+    df_cleaned.to_excel("relatorio.xlsx", index=False)
+
+    return df_cleaned['TICKER']

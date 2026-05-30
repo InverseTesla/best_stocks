@@ -1,12 +1,30 @@
 import os
 import smtplib
+import openpyxl
 from datetime import date
 from email.message import EmailMessage
 
 def send_email(df):
     today = date.today()
 
-    today_formatted = today.strftime("%d/%m/%Y")
+    current_year = today.year
+    last_year = current_year - 1
+
+    first_quarter = date(current_year, 5, 16)
+    second_quarter = date(current_year, 8, 16)
+    third_quarter = date(current_year, 11, 16)
+    fourth_quarter = date(current_year, 4, 1)
+
+    current_quarter = None
+
+    if today >= fourth_quarter and today < first_quarter:
+        current_quarter = f"Quarto trimestre de {last_year}"
+    elif today >= first_quarter and today < second_quarter:
+        current_quarter = f"Primeiro trimestre de {current_year}"
+    elif today >= second_quarter and today < third_quarter:
+        current_quarter = f"Segundo trimestre de {current_year}"
+    else:
+        current_quarter = f"Terceiro trimestre de {current_year}"
 
     SENDER_EMAIL = os.getenv("SENDER_EMAIL")
     APP_PASSWORD = os.getenv("APP_PASSWORD")
@@ -15,10 +33,21 @@ def send_email(df):
 
     msg = EmailMessage()
 
+    tickers_html = "<ul>"
+
+    tickers_html = "".join(
+        f"<li>{ticker}</li>"
+        for ticker in df
+    )
+
+    tickers_html = f"<ul>{tickers_html}</ul>"
+
+
     html = f"""
     <html>
 
     <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
 
     body {{
@@ -94,7 +123,7 @@ def send_email(df):
     <div class="container">
 
     <div class="date">
-    {today_formatted}
+    {current_quarter}
     </div>
 
     <h1>📈 Melhores ações</h1>
@@ -103,7 +132,7 @@ def send_email(df):
     Relatório fundamentalista automático
     </div>
 
-    {df.to_html(index=False)}
+    {tickers_html}
 
     <div class="footer">
     Dados calculados automaticamente com base nos filtros selecionados.
@@ -115,11 +144,20 @@ def send_email(df):
     </html>
     """
 
-    msg['Subject'] = f"Melhores ações | {today_formatted}"
+    msg['Subject'] = f"Melhores ações | {current_quarter}"
     msg['From'] = SENDER_EMAIL
     msg['To'] = RECEIVER_EMAIL
-
+    
     msg.add_alternative(html, subtype='html')
+
+    with open("relatorio.xlsx", "rb") as file:
+        msg.add_attachment(
+            file.read(),
+            maintype = "application",
+            subtype = "vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            filename = f"Relatório Completo do {current_quarter}.xlsx"
+        )
+
 
     try:
         with smtplib.SMTP("smtp.gmail.com", 587) as server:
@@ -127,5 +165,6 @@ def send_email(df):
             server.login(SENDER_EMAIL, APP_PASSWORD)
             server.send_message(msg)
             print("Successfully sent the mail.")
+            os.remove("relatorio.xlsx")
     except Exception as e:
         print(f"Error: {e}")
