@@ -1,7 +1,7 @@
 # Best_stocks
 
 ## Objetivo
-O ETL tem como objeto consultar indicadores de empresas listadas na Bolsa brasileira e fazer uma filtragem a fim de identificar as mais promissoras do trimestre em questão.
+O ETL tem como objetivo consultar indicadores de empresas listadas na Bolsa brasileira e fazer uma filtragem a fim de identificar as mais promissoras do trimestre em questão.
 
 ## Estrutura de pastas
 ```
@@ -36,11 +36,16 @@ A etapa final é o envio de um e-mail ao RECEIVER_EMAIL configurado no .env. Nes
 
 ## Como executar
 ```
-git clone ...
+git clone [...](https://github.com/InverseTesla/best_stocks.git)
 cd best-stocks
 
 python -m venv .venv
+
+Linux/Mac:
 source .venv/bin/activate
+
+Windows:
+.venv\Scripts\activate
 
 pip install -r requirements.txt
 
@@ -55,6 +60,7 @@ RECEIVER_EMAIL=destinatario@gmail.com
 ```
 
 ## Config.toml 
+```
 [PL]
 min = 3
 max = 10
@@ -62,6 +68,7 @@ max = 10
 [ROE]
 min = 15
 max = 30
+```
 
 ## Pipeline completo
 ```
@@ -83,6 +90,16 @@ Status Invest
 ### Exemplo de planilha
 ![Planilha de exemplo](src/assets/planilha_exemplo.png)
 
+
+## Tecnologias
+
+- Python
+- Pandas
+- Requests
+- SMTP
+- TOML
+- Logging
+
 # Regras padrões para escolha de ações
 
 ### P/L
@@ -101,7 +118,7 @@ Traz a relação entre lucro líquido e patrimônio líquido. Estamos buscando r
 Acima de cem mil reais. Quanto menor a liquidez, maior é a dificuldade de vender as ações e pode ser necessário baixar o preço para vender. "Quanto pode ser resgatado em um dia"
 
 ### Crescimento médio anual de receita
-Acima de 10% ao ano. "Mostra expensão do negócio"
+Acima de 10% ao ano. "Mostra expansão do negócio"
 
 ### Crescimento médio anual de lucro
 Acima de 10% ao ano. "Mostra se a empresa consegue transformar crescimento em lucro."
