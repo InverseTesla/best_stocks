@@ -2,6 +2,7 @@ import os
 import smtplib
 import openpyxl
 from datetime import date
+from utils.logger import logger
 from email.message import EmailMessage
 
 def send_email(df):
@@ -26,9 +27,14 @@ def send_email(df):
     else:
         current_quarter = f"Terceiro trimestre de {current_year}"
 
+
     SENDER_EMAIL = os.getenv("SENDER_EMAIL")
     APP_PASSWORD = os.getenv("APP_PASSWORD")
     RECEIVER_EMAIL = os.getenv("RECEIVER_EMAIL")
+
+    if not all([SENDER_EMAIL, APP_PASSWORD, RECEIVER_EMAIL]):
+        logger.critical("Variáveis de ambiente obrigatórias não encontradas.")
+        raise RuntimeError("Configuração inválida")
 
 
     msg = EmailMessage()
@@ -164,7 +170,7 @@ def send_email(df):
             server.starttls()
             server.login(SENDER_EMAIL, APP_PASSWORD)
             server.send_message(msg)
-            print("Successfully sent the mail.")
+            logger.info("E-mail enviado com sucesso.")
             os.remove("relatorio.xlsx")
     except Exception as e:
-        print(f"Error: {e}")
+       logger.error("Erro ao enviar e-mail: %s", e)

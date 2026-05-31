@@ -1,0 +1,33 @@
+# Configurações de Filtros de Ações
+
+[dy]
+min = 7.0
+max = 14.0
+
+[p_l]
+min = 3.0
+max = 10.0
+
+[p_vp]
+min = 0.5
+max = 2.0
+
+[roe]
+min = 15.0
+max = 30.0
+
+[liquidezmediadiaria]
+min = 100_000.0
+max = inf
+
+[dividaliquidapatrimonioliquido]
+min = 0.0
+max = 0.9
+
+[receitas_cagr5]
+min = 10.0
+max = inf
+
+[lucros_cagr5]
+min = 10.0
+max = inf
