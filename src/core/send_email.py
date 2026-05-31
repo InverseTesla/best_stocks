@@ -1,8 +1,7 @@
 import os
 import smtplib
-import openpyxl
 from datetime import date
-from utils.logger import logger
+from src.utils.logger import logger
 from email.message import EmailMessage
 
 def send_email(df):

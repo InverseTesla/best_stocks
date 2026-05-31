@@ -1,5 +1,5 @@
 from pathlib import Path
-from utils.logger import logger
+from src.utils.logger import logger
 import requests
 import tomllib
 import json

@@ -1,7 +1,7 @@
-from utils.logger import logger
-from core.extract import extract_data
-from core.transform import transform_data
-from core.send_email import send_email
+from src.utils.logger import logger
+from src.core.extract import extract_data
+from src.core.transform import transform_data
+from src.core.send_email import send_email
 
 logger.info("Iniciando execução.")
 data = extract_data()

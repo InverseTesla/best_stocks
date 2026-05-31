@@ -1,4 +1,4 @@
-from utils.logger import logger
+from src.utils.logger import logger
 import pandas
 import io
 
@@ -39,7 +39,7 @@ def transform_data(data):
         df_cleaned = df_cleaned.dropna(axis=0)
 
         df_cleaned.to_excel("relatorio.xlsx", index=False)
-        
+
         return df_cleaned['TICKER']
 
     except Exception as e:
