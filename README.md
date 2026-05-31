@@ -4,7 +4,7 @@
 O ETL tem como objeto consultar indicadores de empresas listadas na Bolsa brasileira e fazer uma filtragem a fim de identificar as mais promissoras do trimestre em questão.
 
 ## Estrutura de pastas
-
+```
 best-stocks/
 ├── src/
 │   ├── core/
@@ -16,6 +16,7 @@ best-stocks/
 ├── config.toml
 ├── main.py
 └── README.md
+```
 
 ## Funcionamento
 
@@ -40,7 +41,6 @@ Módulo de orquestração de todo o pipeline.
 
 ### best-stocks/src/config.toml
 Arquivo onde são configurados os parâmetros de filtragem enviados ao Status Invest.
-
 
 
 # Regras padrões para escolha de ações
