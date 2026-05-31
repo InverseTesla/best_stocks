@@ -78,10 +78,10 @@ Status Invest
 
 ## Exemplos
 ### Exemplo de relatório
-![E-mail de exemplo](assets/email_exemplo.png)
+![E-mail de exemplo](src/assets/email_exemplo.png)
 
 ### Exemplo de planilha
-![Planilha de exemplo](assets/planilha_exemplo.png)
+![Planilha de exemplo](src/assets/planilha_exemplo.png)
 
 # Regras padrões para escolha de ações
 
