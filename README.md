@@ -24,24 +24,64 @@ O pipeline inicia com a consulta ao site Status Invest, fazendo uma requisição
 Após essa primeira etapa, o dataframe recebido é tratado, sendo removidas colunas que não são importantes, linhas not a number e removendo tickers duplicados por classe de ação (ex: ITSA3, ITSA4). Um arquivo resultante é então salvo para ser anexado no e-mail posteriormente.
 A etapa final é o envio de um e-mail ao RECEIVER_EMAIL configurado no .env. Nessa etapa há uma identificação do trimestre a que a análise se refere para identificação ao usuário final e o anexo gerado na etapa "transform.py" é excluído.
 
-### best-stocks/src/core/extract.py
-Módulo responsável por consultar os dados via API filtrando as empresas de interesse.
 
-### best-stocks/src/core/transform.py
-Módulo responsável por tratar o dataframe recebido da requisição e salvar localmente para posterior envio por e-mail.
+## Responsabilidade por módulo
 
-### best-stocks/src/core/send_email.py
-Módulo responsável por configurar e enviar o e-mail ao destinatário. É neste módulo que o arquivo de anexo salvo na etapa anterior é excluído.
+|Módulo|Responsabilidade|
+| :--- | :---|
+|extract.py| Consulta dados
+|transform.py| Trata e filtra
+|send_email.py| Envia relatório
+|logger.py|	Configura logs
 
-### best-stocks/src/utils/logger.py
-Módulo responsável por configurar o logger que é distribuído em todos os módulos.
+## Como executar
+```
+git clone ...
+cd best-stocks
 
-### best-stocks/src/main.py
-Módulo de orquestração de todo o pipeline.
+python -m venv .venv
+source .venv/bin/activate
 
-### best-stocks/src/config.toml
-Arquivo onde são configurados os parâmetros de filtragem enviados ao Status Invest.
+pip install -r requirements.txt
 
+python main.py
+```
+
+## Variáveis de ambiente
+```
+SENDER_EMAIL=seu_email@gmail.com
+APP_PASSWORD=senha_de_aplicativo
+RECEIVER_EMAIL=destinatario@gmail.com
+```
+
+## Config.toml 
+[PL]
+min = 3
+max = 10
+
+[ROE]
+min = 15
+max = 30
+
+## Pipeline completo
+```
+Status Invest
+      ↓
+   Extract
+      ↓
+  Transform
+      ↓
+ Excel + HTML
+      ↓
+ Send Email
+```
+
+## Exemplos
+### Exemplo de relatório
+![E-mail de exemplo](assets/email_exemplo.png)
+
+### Exemplo de planilha
+![Planilha de exemplo](assets/planilha_exemplo.png)
 
 # Regras padrões para escolha de ações
 
