@@ -1,5 +1,6 @@
 import os
 import smtplib
+from dotenv import load_dotenv
 from datetime import date
 from src.utils.logger import logger
 from email.message import EmailMessage
@@ -26,6 +27,7 @@ def send_email(df):
     else:
         current_quarter = f"Terceiro trimestre de {current_year}"
 
+    load_dotenv()
 
     SENDER_EMAIL = os.getenv("SENDER_EMAIL")
     APP_PASSWORD = os.getenv("APP_PASSWORD")
