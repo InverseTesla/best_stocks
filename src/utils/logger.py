@@ -1,5 +1,6 @@
 from pathlib import Path
 import logging
+import sys
 
 # create logger with 'best_stocks'
 logger = logging.getLogger('best_stocks')
@@ -14,7 +15,9 @@ Path("log").mkdir(parents=True, exist_ok=True)
 
 # create file handler which logs info messages
 file_handler = logging.FileHandler('log/app.log')
-
 file_handler.setFormatter(formatter)
-
 logger.addHandler(file_handler)
+
+stdout_handler = logging.StreamHandler(sys.stdout)
+stdout_handler.setFormatter(formatter)
+logger.addHandler(stdout_handler)
