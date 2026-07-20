@@ -2,8 +2,17 @@ from src.utils.logger import logger
 from src.core.extract import extract_data
 from src.core.transform import transform_data
 from src.core.send_email import send_email
+from src.database.connection import get_connection
 
 logger.info("Iniciando execução.")
+
+conn = get_connection()
+
+print(conn)
+print("Conectado!")
+
+conn.close()
+
 data = extract_data()
 
 logger.info("Indicadores consultados com sucesso.")
