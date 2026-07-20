@@ -1,7 +1,7 @@
 import os
-import psycopg
+from psycopg import Connection
 
-def get_connection():
+def get_connection() -> Connection:
     return psycopg.connect(
         host=os.getenv("POSTGRES_HOST"),
         port=os.getenv("POSTGRES_PORT"),
