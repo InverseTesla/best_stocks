@@ -2,16 +2,11 @@ from src.utils.logger import logger
 from src.core.extract import extract_data
 from src.core.transform import transform_data
 from src.core.send_email import send_email
-from src.database.connection import get_connection
+from database.schema import create_tables
 
 logger.info("Iniciando execução.")
 
-conn = get_connection()
-
-print(conn)
-print("Conectado!")
-
-conn.close()
+create_tables()
 
 data = extract_data()
 
