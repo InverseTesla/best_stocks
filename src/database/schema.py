@@ -1,4 +1,4 @@
-from database.connection import get_connection
+from src.database.connection import get_connection
 
 def create_stock_metrics_table(cur):
 
