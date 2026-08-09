@@ -2,7 +2,7 @@ from src.utils.logger import logger
 from src.core.extract import extract_data
 from src.core.transform import transform_data
 from src.core.send_email import send_email
-from database.schema import create_tables
+from src.database.schema import create_tables
 
 logger.info("Iniciando execução.")
 
