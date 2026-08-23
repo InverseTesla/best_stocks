@@ -2,13 +2,9 @@ from src.utils.logger import logger
 import pandas
 import io
 
-def transform_data(data):
-
-    csv_data = io.StringIO(data)
+def transform_data(df):
 
     try:
-        df = pandas.read_csv(csv_data, sep = ';')
-
         df = df.drop(
             columns=[
                 'P/ATIVOS', 
@@ -27,9 +23,6 @@ def transform_data(data):
                 'PATRIMONIO / ATIVOS',
                 'PASSIVOS / ATIVOS',
                 'GIRO ATIVOS',
-                ' VPA',
-                ' LPA',
-                ' PEG Ratio'
                 ]
                 )
 
@@ -39,6 +32,8 @@ def transform_data(data):
         df_cleaned = df_cleaned.dropna(axis=0)
 
         df_cleaned.to_excel("relatorio.xlsx", index=False)
+
+        logger.info("Filtragem aplicada na tabela de indicadores.")
 
         return df_cleaned['TICKER']
 

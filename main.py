@@ -1,24 +1,22 @@
 from src.utils.logger import logger
 from src.core.extract import extract_data
+from src.core.filter import filter_dataframe
 from src.core.transform import transform_data
 from src.core.send_email import send_email
-from src.database.schema import create_tables
-from src.database.repository import insert_stock_metric
+#from src.database.schema import create_tables
+#from src.database.repository import insert_stock_metric
 
 logger.info("Iniciando execução.")
 
-create_tables()
-insert_stock_metric()
+#create_tables()
+#insert_stock_metric()
 
 data = extract_data()
 
-logger.info("Indicadores consultados com sucesso.")
+df = filter_dataframe(data)
 
-df = transform_data(data)
+series = transform_data(df)
 
-logger.info("Filtragem aplicada na tabela de indicadores.")
-
-send_email(df)
+send_email(series)
 
 logger.info("Execução finalizada.")
-

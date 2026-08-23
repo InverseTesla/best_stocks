@@ -1,5 +1,5 @@
-from pathlib import Path
 from src.utils.logger import logger
+from pathlib import Path
 import requests
 import tomllib
 import json
@@ -19,10 +19,10 @@ def extract_data():
         url = "https://statusinvest.com.br/category/AdvancedSearchResultExport"
 
         search_dict = {}
-        for chave, valores in config.items():
+        for chave, _ in config.items():
             search_dict[chave] = {
-                "Item1": None if valores["min"] == 0 else valores["min"],
-                "Item2": None if valores["max"] == float("inf") else valores["max"]
+                "Item1": None,
+                "Item2": None
             }
 
         params = {
@@ -38,6 +38,8 @@ def extract_data():
         response = requests.get(url, params=params, headers=headers, timeout=30)
 
         response.raise_for_status()
+
+        logger.info("Indicadores consultados com sucesso.")
         
         return response.text
     
