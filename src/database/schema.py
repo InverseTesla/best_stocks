@@ -19,7 +19,7 @@ def create_stock_metrics_table(cur):
 
             roe NUMERIC(10,4),
 
-            daily_liquidity NUMERIC(10,4),
+            daily_liquidity NUMERIC(15,4),
 
             debt_to_equity NUMERIC(10,4),
 
