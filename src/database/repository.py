@@ -41,7 +41,7 @@ def insert_stock_metric(df):
                         annual_recurring_revenue,
                         collected_at
                     )
-                    VALUES %s;
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
                 """
                 cur.executemany(query, data_to_insert)
                 
