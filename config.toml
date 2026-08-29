@@ -27,7 +27,3 @@ max = 0.9
 [receitas_cagr5]
 min = 10.0
 max = inf
-
-[lucros_cagr5]
-min = 10.0
-max = inf

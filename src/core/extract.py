@@ -2,7 +2,9 @@ from src.utils.logger import logger
 from pathlib import Path
 import requests
 import tomllib
+import pandas
 import json
+import io
 
 def extract_data():
 
@@ -31,7 +33,7 @@ def extract_data():
         }
             
         headers = {
-            "User-Agent": "Mozilla/5.0",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
             "Accept": "text/csv"
         }
 
@@ -40,8 +42,12 @@ def extract_data():
         response.raise_for_status()
 
         logger.info("Indicadores consultados com sucesso.")
+
+        csv_data = io.StringIO(response.text)
         
-        return response.text
+        df = pandas.read_csv(csv_data, sep=';', decimal=',', thousands='.')
+        
+        return df
     
     except requests.exceptions.RequestException as e:
         logger.error("Erro ao consultar os indicadores das empresas: %s", e)

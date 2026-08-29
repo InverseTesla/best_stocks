@@ -3,20 +3,25 @@ from src.core.extract import extract_data
 from src.core.filter import filter_dataframe
 from src.core.transform import transform_data
 from src.core.send_email import send_email
-#from src.database.schema import create_tables
-#from src.database.repository import insert_stock_metric
+from src.database.schema import create_tables
+from src.database.repository import insert_stock_metric
 
-logger.info("Iniciando execução.")
+try:
+    logger.info("Iniciando execução.")
 
-#create_tables()
-#insert_stock_metric()
+    create_tables()
 
-data = extract_data()
+    df = extract_data()
 
-df = filter_dataframe(data)
+    insert_stock_metric(df)
 
-series = transform_data(df)
+    df = filter_dataframe(df)
 
-send_email(series)
+    series = transform_data(df)
 
-logger.info("Execução finalizada.")
+    send_email(series)
+
+    logger.info("Execução finalizada.")
+except Exception as e:
+    logger.error("Erro ao executar pipeline: %s.", e)
+

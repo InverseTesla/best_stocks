@@ -162,3 +162,71 @@
 2026-08-23 19:22:06,788 - best_stocks - INFO - Filtragem aplicada na tabela de indicadores.
 2026-08-23 19:22:11,153 - best_stocks - INFO - E-mail enviado com sucesso.
 2026-08-23 19:22:11,325 - best_stocks - INFO - Execução finalizada.
+2026-08-29 10:44:53,353 - best_stocks - INFO - Iniciando execução.
+2026-08-29 10:44:53,910 - best_stocks - ERROR - Erro ao consultar os indicadores das empresas: 403 Client Error: Forbidden for url: https://statusinvest.com.br/category/AdvancedSearchResultExport?search=%7B%22dy%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%2C+%22p_l%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%2C+%22p_vp%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%2C+%22roe%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%2C+%22liquidezmediadiaria%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%2C+%22dividaliquidapatrimonioliquido%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%2C+%22receitas_cagr5%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%2C+%22lucros_cagr5%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%7D&CategoryType=1
+2026-08-29 10:46:28,059 - best_stocks - INFO - Iniciando execução.
+2026-08-29 10:46:28,455 - best_stocks - ERROR - Erro ao consultar os indicadores das empresas: 403 Client Error: Forbidden for url: https://statusinvest.com.br/category/AdvancedSearchResultExport?search=%7B%22dy%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%2C+%22p_l%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%2C+%22p_vp%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%2C+%22roe%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%2C+%22liquidezmediadiaria%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%2C+%22dividaliquidapatrimonioliquido%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%2C+%22receitas_cagr5%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%2C+%22lucros_cagr5%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%7D&CategoryType=1
+2026-08-29 11:22:12,374 - best_stocks - INFO - Iniciando execução.
+2026-08-29 11:22:12,788 - best_stocks - ERROR - Erro ao consultar os indicadores das empresas: 403 Client Error: Forbidden for url: https://statusinvest.com.br/category/AdvancedSearchResultExport?search=%7B%22dy%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%2C+%22p_l%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%2C+%22p_vp%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%2C+%22roe%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%2C+%22liquidezmediadiaria%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%2C+%22dividaliquidapatrimonioliquido%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%2C+%22receitas_cagr5%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%2C+%22lucros_cagr5%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%7D&CategoryType=1
+2026-08-29 11:24:22,551 - best_stocks - INFO - Iniciando execução.
+2026-08-29 11:24:22,969 - best_stocks - ERROR - Erro ao consultar os indicadores das empresas: 403 Client Error: Forbidden for url: https://statusinvest.com.br/category/AdvancedSearchResultExport?search=%7B%22dy%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%2C+%22p_l%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%2C+%22p_vp%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%2C+%22roe%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%2C+%22liquidezmediadiaria%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%2C+%22dividaliquidapatrimonioliquido%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%2C+%22receitas_cagr5%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%2C+%22lucros_cagr5%22%3A+%7B%22Item1%22%3A+null%2C+%22Item2%22%3A+null%7D%7D&CategoryType=1
+2026-08-29 11:24:22,973 - best_stocks - ERROR - Erro ao executar pipeline: No columns to parse from file.
+2026-08-29 11:29:27,503 - best_stocks - INFO - Iniciando execução.
+2026-08-29 11:29:28,184 - best_stocks - INFO - Indicadores consultados com sucesso.
+2026-08-29 11:29:28,261 - best_stocks - ERROR - Falha ao processar a tabela de indicadores: 'TICKER'
+2026-08-29 11:29:28,373 - best_stocks - ERROR - Erro ao executar pipeline: 'NoneType' object is not iterable.
+2026-08-29 11:30:48,241 - src.utils.logger - INFO - Iniciando execução.
+2026-08-29 11:30:48,920 - src.utils.logger - INFO - Indicadores consultados com sucesso.
+2026-08-29 11:30:48,938 - src.utils.logger - ERROR - Falha ao processar a tabela de indicadores: 'TICKER'
+2026-08-29 11:30:48,984 - src.utils.logger - ERROR - Erro ao executar pipeline: 'NoneType' object is not iterable.
+2026-08-29 11:34:11,720 - src.utils.logger - INFO - Iniciando execução.
+2026-08-29 11:34:12,391 - src.utils.logger - INFO - Indicadores consultados com sucesso.
+2026-08-29 11:34:12,411 - src.utils.logger - ERROR - Falha ao processar a tabela de indicadores: 'TICKER'
+2026-08-29 11:34:12,461 - src.utils.logger - ERROR - Erro ao executar pipeline: 'NoneType' object is not iterable.
+2026-08-29 11:35:46,316 - best_stocks - INFO - [Module: main] - Iniciando execução.
+2026-08-29 11:35:47,035 - best_stocks - INFO - [Module: extract] - Indicadores consultados com sucesso.
+2026-08-29 11:35:47,053 - best_stocks - ERROR - [Module: transform] - Falha ao processar a tabela de indicadores: 'TICKER'
+2026-08-29 11:35:47,096 - best_stocks - ERROR - [Module: main] - Erro ao executar pipeline: 'NoneType' object is not iterable.
+2026-08-29 11:37:42,044 - best_stocks - INFO - [Module: main] - Iniciando execução.
+2026-08-29 11:37:42,786 - best_stocks - INFO - [Module: extract] - Indicadores consultados com sucesso.
+2026-08-29 11:37:42,797 - best_stocks - ERROR - [Module: main] - Erro ao executar pipeline: list.append() takes exactly one argument (2 given).
+2026-08-29 11:38:13,617 - best_stocks - INFO - [Module: main] - Iniciando execução.
+2026-08-29 11:38:14,317 - best_stocks - INFO - [Module: extract] - Indicadores consultados com sucesso.
+2026-08-29 11:38:14,329 - best_stocks - ERROR - [Module: main] - Erro ao executar pipeline: None.
+2026-08-29 11:38:34,540 - best_stocks - INFO - [Module: main] - Iniciando execução.
+2026-08-29 11:38:35,220 - best_stocks - INFO - [Module: extract] - Indicadores consultados com sucesso.
+2026-08-29 11:38:35,232 - best_stocks - ERROR - [Module: main] - Erro ao executar pipeline: None.
+2026-08-29 11:38:56,648 - best_stocks - INFO - [Module: main] - Iniciando execução.
+2026-08-29 11:38:57,316 - best_stocks - INFO - [Module: extract] - Indicadores consultados com sucesso.
+2026-08-29 11:38:57,333 - best_stocks - ERROR - [Module: main] - Erro ao executar pipeline: None.
+2026-08-29 11:39:09,229 - best_stocks - INFO - [Module: main] - Iniciando execução.
+2026-08-29 11:39:09,890 - best_stocks - INFO - [Module: extract] - Indicadores consultados com sucesso.
+2026-08-29 11:39:09,917 - best_stocks - ERROR - [Module: transform] - Falha ao processar a tabela de indicadores: 'TICKER'
+2026-08-29 11:39:09,959 - best_stocks - ERROR - [Module: main] - Erro ao executar pipeline: 'NoneType' object is not iterable.
+2026-08-29 11:40:03,556 - best_stocks - INFO - [Module: main] - Iniciando execução.
+2026-08-29 11:40:04,201 - best_stocks - INFO - [Module: extract] - Indicadores consultados com sucesso.
+2026-08-29 11:40:04,219 - best_stocks - ERROR - [Module: main] - Erro ao executar pipeline: None.
+2026-08-29 11:41:36,439 - best_stocks - INFO - [Module: main] - Iniciando execução.
+2026-08-29 11:41:37,159 - best_stocks - INFO - [Module: extract] - Indicadores consultados com sucesso.
+2026-08-29 11:41:37,175 - best_stocks - ERROR - [Module: main] - Erro ao executar pipeline: unhashable type: 'list'.
+2026-08-29 11:42:06,210 - best_stocks - INFO - [Module: main] - Iniciando execução.
+2026-08-29 11:42:06,911 - best_stocks - INFO - [Module: extract] - Indicadores consultados com sucesso.
+2026-08-29 11:42:06,927 - best_stocks - ERROR - [Module: main] - Erro ao executar pipeline: list.append() takes exactly one argument (2 given).
+2026-08-29 11:42:39,189 - best_stocks - INFO - [Module: main] - Iniciando execução.
+2026-08-29 11:42:39,969 - best_stocks - INFO - [Module: extract] - Indicadores consultados com sucesso.
+2026-08-29 11:42:40,779 - best_stocks - INFO - [Module: transform] - Filtragem aplicada na tabela de indicadores.
+2026-08-29 11:42:44,855 - best_stocks - INFO - [Module: send_email] - E-mail enviado com sucesso.
+2026-08-29 11:42:45,092 - best_stocks - INFO - [Module: main] - Execução finalizada.
+2026-08-29 11:43:50,559 - best_stocks - INFO - [Module: main] - Iniciando execução.
+2026-08-29 11:43:51,254 - best_stocks - INFO - [Module: extract] - Indicadores consultados com sucesso.
+2026-08-29 11:43:51,267 - best_stocks - ERROR - [Module: main] - Erro ao executar pipeline: unhashable type: 'list'.
+2026-08-29 11:44:03,861 - best_stocks - INFO - [Module: main] - Iniciando execução.
+2026-08-29 11:44:04,542 - best_stocks - INFO - [Module: extract] - Indicadores consultados com sucesso.
+2026-08-29 11:44:04,868 - best_stocks - INFO - [Module: transform] - Filtragem aplicada na tabela de indicadores.
+2026-08-29 11:44:08,894 - best_stocks - INFO - [Module: send_email] - E-mail enviado com sucesso.
+2026-08-29 11:44:09,119 - best_stocks - INFO - [Module: main] - Execução finalizada.
+2026-08-29 14:39:15,179 - best_stocks - INFO - [Module: main] - Iniciando execução.
+2026-08-29 14:39:16,012 - best_stocks - INFO - [Module: extract] - Indicadores consultados com sucesso.
+2026-08-29 14:39:16,511 - best_stocks - INFO - [Module: transform] - Filtragem aplicada na tabela de indicadores.
+2026-08-29 14:39:25,581 - best_stocks - INFO - [Module: send_email] - E-mail enviado com sucesso.
+2026-08-29 14:39:25,757 - best_stocks - INFO - [Module: main] - Execução finalizada.

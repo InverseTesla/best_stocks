@@ -1,31 +1,10 @@
 from src.utils.logger import logger
-import pandas
-import io
+
 
 def transform_data(df):
 
     try:
-        df = df.drop(
-            columns=[
-                'P/ATIVOS', 
-                'MARGEM BRUTA', 
-                'MARGEM EBIT', 
-                'MARG. LIQUIDA', 
-                'P/EBIT', 
-                'EV/EBIT', 
-                'DIVIDA LIQUIDA / EBIT', 
-                'PSR', 
-                'P/CAP. GIRO', 
-                'P. AT CIR. LIQ.', 
-                'LIQ. CORRENTE',
-                'ROA',
-                'ROIC',
-                'PATRIMONIO / ATIVOS',
-                'PASSIVOS / ATIVOS',
-                'GIRO ATIVOS',
-                ]
-                )
-
+        
         ticker_name = df['TICKER'].str[:4]
         non_duplicates_mask = ~ticker_name.duplicated(keep='first')
         df_cleaned = df[non_duplicates_mask]
@@ -38,7 +17,7 @@ def transform_data(df):
         return df_cleaned['TICKER']
 
     except Exception as e:
-        logger.error("Falha ao transformar ao processar a tabela de indicadores: %s", e)
+        logger.error("Falha ao processar a tabela de indicadores: %s", e)
         return None
 
 

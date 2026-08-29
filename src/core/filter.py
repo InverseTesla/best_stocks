@@ -5,7 +5,7 @@ import pandas
 import io
 
 
-def filter_dataframe(data):
+def filter_dataframe(df):
 
     ROOT_DIR = Path(__file__).resolve().parent.parent.parent
 
@@ -30,14 +30,16 @@ def filter_dataframe(data):
         'roe': 'ROE',
         'liquidezmediadiaria': 'LIQUIDEZ MEDIA DIARIA',
         'dividaliquidapatrimonioliquido': 'DIV. LIQ. / PATRI.',
-        'receitas_cagr5': 'CAGR RECEITAS 5 ANOS',
-        'lucros_cagr5': 'CAGR LUCROS 5 ANOS'
+        'receitas_cagr5': 'CAGR RECEITAS 5 ANOS'
     }
 
-    csv_data = io.StringIO(data)
-
-    df = pandas.read_csv(csv_data, sep=';', decimal=',', thousands='.')
+    
     df.columns = df.columns.str.strip()
+
+    columns_to_keep = ['TICKER', 'PRECO']
+    columns_to_keep.extend(list(column_config_map.values()))
+
+    df = df[columns_to_keep]
 
     query_chunks = []
     for key, value in column_config_map.items():

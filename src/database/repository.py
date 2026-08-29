@@ -1,25 +1,35 @@
 from src.database.connection import get_connection
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
-
-def insert_stock_metric():
+def insert_stock_metric(df):
     with get_connection() as conn:
         with conn.cursor() as cur:
 
             cur.execute("""
                 INSERT INTO stock_metrics (
                     ticker,
-                    collected_at,
+                    price,
                     dividend_yield,
                     price_to_earnings,
                     price_to_book,
-                    roe
+                    roe,
+                    daily_liquidity,
+                    debt_to_equity,
+                    annual_recurring_revenue,
+                    collected_at
                 )
-                VALUES (%s, %s, %s, %s, %s, %s);
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s);
             """, (
-                "PETR4",
-                "2026-08-22 20:00:00",
-                12.50,
-                5.20,
-                1.10,
-                21.30,
+                df['TICKER'],
+                df['PRECO'],
+                df['DY'],
+                df['P/L'],
+                df['P/VP'],
+                df['ROE'],
+                df['LIQUIDEZ MEDIA DIARIA'],
+                df['DIV. LIQ. / PATRI.'],
+                df['CAGR RECEITAS 5 ANOS'],
+                datetime.now(ZoneInfo("America/Sao_Paulo"))
             ))
+

@@ -8,7 +8,7 @@ logger = logging.getLogger('best_stocks')
 logger.setLevel(logging.INFO)
 
 formatter = logging.Formatter(
-    '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    '%(asctime)s - %(name)s - %(levelname)s - [Module: %(module)s] - %(message)s'
     )
 
 Path("log").mkdir(parents=True, exist_ok=True)
