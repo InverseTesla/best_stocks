@@ -1,5 +1,4 @@
 from src.database.connection import get_connection
-from psycopg2.extras import execute_values
 from src.utils.logger import logger
 from datetime import datetime
 from zoneinfo import ZoneInfo
@@ -8,14 +7,20 @@ def insert_stock_metric(df):
 
     try:
         df.columns = df.columns.str.strip()
-
         now = datetime.now(ZoneInfo("America/Sao_Paulo"))
 
         data_to_insert = [
             (
-                row['TICKER'], row['PRECO'], row['DY'], row['P/L'], row['P/VP'],
-                row['ROE'], row['LIQUIDEZ MEDIA DIARIA'], row['DIV. LIQ. / PATRI.'],
-                row['CAGR RECEITAS 5 ANOS'], now
+                row['TICKER'], 
+                row['PRECO'], 
+                row['DY'], 
+                row['P/L'], 
+                row['P/VP'],
+                row['ROE'], 
+                row['LIQUIDEZ MEDIA DIARIA'], 
+                row['DIV. LIQ. / PATRI.'],
+                row['CAGR RECEITAS 5 ANOS'],
+                now
             )
             for _, row in df.iterrows()
         ]
@@ -38,8 +43,9 @@ def insert_stock_metric(df):
                     )
                     VALUES %s;
                 """
-                execute_values(cur, query, data_to_insert)
+                cur.executemany(query, data_to_insert)
                 
+                conn.commit()
     except Exception as e:
         logger.error("Erro ao inserir dados no banco: %s", e)
 
