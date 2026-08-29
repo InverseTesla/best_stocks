@@ -3,6 +3,9 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 
 def insert_stock_metric(df):
+
+    df.columns = df.columns.str.strip()
+    
     with get_connection() as conn:
         with conn.cursor() as cur:
 
