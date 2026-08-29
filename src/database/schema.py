@@ -25,7 +25,7 @@ def create_stock_metrics_table(cur):
 
             annual_recurring_revenue NUMERIC(10,4),
 
-            collected_at TIMESTAMP NOT NULL
+            collected_at TIMESTAMPTZ NOT NULL
         );
         
     """)
