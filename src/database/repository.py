@@ -46,6 +46,8 @@ def insert_stock_metric(df):
                 cur.executemany(query, data_to_insert)
                 
                 conn.commit()
+
+                logger.info("Dados inseridos com sucesso no banco de dados.")
     except Exception as e:
         logger.error("Erro ao inserir dados no banco: %s", e)
 
