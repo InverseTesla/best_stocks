@@ -9,7 +9,7 @@ def create_stock_metrics_table(cur):
 
             ticker VARCHAR(10) NOT NULL,
 
-            collected_at TIMESTAMP NOT NULL,
+            price NUMERIC(10,4),
 
             dividend_yield NUMERIC(10,4),
 
@@ -17,7 +17,15 @@ def create_stock_metrics_table(cur):
 
             price_to_book NUMERIC(10,4),
 
-            roe NUMERIC(10,4)
+            roe NUMERIC(10,4),
+
+            daily_liquidity NUMERIC(10,4),
+
+            debt_to_equity NUMERIC(10,4),
+
+            annual_recurring_revenue NUMERIC(10,4),
+
+            collected_at TIMESTAMP NOT NULL
         );
         
     """)
